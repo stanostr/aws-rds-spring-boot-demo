@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.stan.demo.model.Product;
 import com.stan.demo.repository.ProductRepository;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -18,7 +19,6 @@ public class ProductController {
 	@Autowired
 	private ProductRepository productRepository;
 
-    @CrossOrigin
 	@GetMapping("/all")
 	public Iterable<Product> getAll() {
 		return productRepository.findAll();
